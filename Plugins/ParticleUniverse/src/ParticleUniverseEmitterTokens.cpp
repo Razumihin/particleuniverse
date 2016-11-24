@@ -55,7 +55,7 @@ namespace ParticleUniverse
 		}
 		else
 		{
-			compiler->addError(ScriptCompiler::CE_INVALIDPARAMETERS, obj->file, obj->line);
+            compiler->addError(ScriptCompiler::CE_INVALIDPARAMETERS, obj->file, obj->line, "No name for emitter.");
 			return;
 		}
 
@@ -63,7 +63,7 @@ namespace ParticleUniverse
 		ParticleEmitterFactory* particleEmitterFactory = ParticleSystemManager::getSingletonPtr()->getEmitterFactory(type);
 		if (!particleEmitterFactory)
 		{
-			compiler->addError(ScriptCompiler::CE_INVALIDPARAMETERS, obj->file, obj->line);
+            compiler->addError(ScriptCompiler::CE_INVALIDPARAMETERS, obj->file, obj->line, "Emitter with name '" + obj->name + "' does not exist.");
 			return;
 		}
 

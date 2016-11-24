@@ -61,6 +61,11 @@ namespace ParticleUniverse
 		mBuiltinScriptTranslatorManager = PU_NEW BuiltinScriptTranslatorManager();
 		ScriptCompilerManager::getSingleton().addTranslatorManager(mBuiltinScriptTranslatorManager);
 
+        for (int i = 0; i <= TOKEN_SCENE_POSITION; ++i)
+        {
+            ScriptCompilerManager::getSingleton().registerCustomWordId(token[i]);
+        }
+
 		// Initialise script serialisation
 		mParticleScriptSerializer = PU_NEW ParticleScriptSerializer();
 
